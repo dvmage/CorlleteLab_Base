@@ -20,7 +20,6 @@
     "extra": {
         "map": [
             ["app/code/local/CorlleteLab/Base", "app/code/local/CorlleteLab/Base"],
-            ["app/code/community/CorlleteLab/Base", "app/code/community/CorlleteLab/Base"],
             ["app/etc/modules/CorlleteLab_Base.xml", "app/etc/modules/CorlleteLab_Base.xml"]
         ]
     },
