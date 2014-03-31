@@ -20,7 +20,8 @@
     "extra": {
         "map": [
             ["app/code/community/CorlleteLab/Base", "app/code/community/CorlleteLab/Base"],
-            ["app/etc/modules/CorlleteLab_Base.xml", "app/etc/modules/CorlleteLab_Base.xml"]
+            ["app/etc/modules/CorlleteLab_Base.xml", "app/etc/modules/CorlleteLab_Base.xml"],
+            ["skin/adminhtml/default/default/corlletelab", "skin/adminhtml/default/default/corlletelab"]
         ]
     },
     "config": {
