@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<CorlleteLab_Base>
+			<version>1.0.3</version>
+			<platform>ce</platform>
+		</CorlleteLab_Base>
+	</modules>
+  
+	<global>
+		<blocks>
+			<clbase>
+				<class>CorlleteLab_Base_Block</class>
+			</clbase>
+		</blocks>
+		<resources>
+		  <clbase_setup>
+			  <setup>
+				  <module>CorlleteLab_Base</module>
+			  </setup>
+			  <connection>
+				  <use>core_setup</use>
+			  </connection>
+		  </clbase_setup>
+		  <clbase_write>
+			  <connection>
+				  <use>core_write</use>
+			  </connection>
+		  </clbase_write>
+		  <clbase_read>
+			  <connection>
+				  <use>core_read</use>
+			  </connection>
+		  </clbase_read>
+		</resources>
+		<models>
+			<clbase>
+				<class>CorlleteLab_Base_Model</class>
+			</clbase>
+           <!-- --><core>
+                <rewrite>
+                    <layout>CorlleteLab_Base_Model_Layout</layout>
+                </rewrite>
+            </core>
+		</models>
+	  <helpers>
+		  <clbase>
+			  <class>CorlleteLab_Base_Helper</class>
+		  </clbase>
+	  </helpers>
+	</global>
+	
+	<adminhtml>
+		<acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <clbase>
+                                        <title>CorlleteLab - Extensions Information</title>
+                                    </clbase>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <events>
+            <controller_action_predispatch>
+                <observers>
+                    <clbase_upds>
+                        <type>singleton</type>
+                        <class>clbase/feed</class>
+                        <method>check</method>
+                    </clbase_upds>
+                </observers>
+            </controller_action_predispatch>
+        </events> 
+    
+	</adminhtml>
+	<default>
+		<clbase>
+			<feed>
+				<check_frequency>86400</check_frequency>
+				<interests>INFO,PROMO,UPDATE_RELEASE,NEW_RELEASE,INSTALLED_UPDATE</interests>
+			</feed>
+		</clbase>
+	</default>			
+</config>

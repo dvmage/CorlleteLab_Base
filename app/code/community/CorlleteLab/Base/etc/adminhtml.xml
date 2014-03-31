@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <clbase>
+                                        <title>CorlleteLab - Extensions Information</title>
+                                    </clbase>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <events>
+        <controller_action_predispatch>
+            <observers>
+                <clbase_upds>
+                    <type>singleton</type>
+                    <class>clbase/feed</class>
+                    <method>check</method>
+                </clbase_upds>
+            </observers>
+        </controller_action_predispatch>
+    </events>
+</config>

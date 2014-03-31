@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <corlletelab translate="label" module="clbase">
+            <label>CorlleteLab Extensions</label>
+            <sort_order>0</sort_order>
+        </corlletelab>
+        <corlletelabtmpl translate="label" module="clbase">
+            <label>CorlleteLab Templates</label>
+            <sort_order>0</sort_order>
+        </corlletelabtmpl>
+    </tabs>
+	<sections>
+		<clbase translate="label" module="clbase">
+			<label>General</label>
+			<tab>corlletelab</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>0</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+                <extensions translate="label">
+                    <label>Installed Extensions</label>
+                    <frontend_type>text</frontend_type>
+                    <frontend_model>clbase/extensions</frontend_model>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </extensions>
+				<feed>
+					<label>Notifications</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>90</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<interests translate="label">
+							<label>I'd like to get information from CorlleteLab about:</label>
+							<comment></comment>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>100</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+							<source_model>clbase/source_updates_type</source_model>
+						</interests>
+					</fields>	
+				</feed>		
+			</groups>
+		</clbase>
+	</sections>
+</config>
